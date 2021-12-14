@@ -8,7 +8,7 @@ class Nav extends Component {
         {/* Creamos una lista de navegacion y le indicamos a donde enruta */}
         <li><Link to="/">Home</Link></li>
         <li><Link to="/itemlist">ToDo</Link></li>
-        <li><Link to="/weather">Weather</Link></li>
+        <li><Link to="/weatherlist">Weather</Link></li>
         {/* Link to sustituye a Href */}
       </ul>
     </nav>;

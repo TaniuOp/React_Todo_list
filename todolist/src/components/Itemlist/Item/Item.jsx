@@ -1,21 +1,32 @@
 import React, { Component } from "react";
+import './Item.css'
 
-
-export class Item extends Component {
-
-  render() {
-
-    return (
-      <div>
-        {/* leo los parametros de Itemlist */}
-        <p>Tarea: {this.props.name}</p>
-        <p>Fecha: {this.props.date}</p>    
-        <p>Responsable: {this.props.assignee}</p>   
-        <button onClick={this.props.delete}>Borrar item</button>
-
-      </div>
-    )
+class Item extends Component {
+ //reconst
+ constructor(props) {
+  super(props)
+  this.state = {
+    assignee : this.props.info.assignee || "Promo FullStack Sep 2021"
   }
 }
+  render() {
+
+  const {name,date}= this.props.info
+
+      return (
+          <div>
+        <ul>
+          <li>Tarea: {name} </li>
+          <li>Fecha Tarea: {date} </li>
+          <li>Responsable: {this.state.assignee} </li>
+        </ul>
+
+        <button onClick={this.props.delete}>Borrar</button>
+          </div>
+      )
+  }
+}
+
+
 
 export default Item;

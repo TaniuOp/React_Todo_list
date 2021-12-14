@@ -4,7 +4,4 @@ div#footer {
     background-color: rgba(0, 0, 0, 0.342);
     color: white;
     text-align: center;
-    position: fixed;
-    padding-top: 6px;
-    bottom: 0;
 }

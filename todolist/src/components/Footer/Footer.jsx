@@ -4,7 +4,7 @@ import './Footer.css';
 class Footer extends Component {
   render() {
     return <div id="footer">
-      <p>Ejercicio React - Footer Clase 36 / 37 - To do List & Weather</p> 
+      <p>Ejercicio React - Clase 36 / 37 / 38 - To do List & Weather</p> 
       </div>;
   }
 }

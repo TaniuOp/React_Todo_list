@@ -1,0 +1,12 @@
+img#welcomeImg{
+    width:30%
+}
+
+a#showList{
+    font-size: 1.5em;
+    font-style: bold;
+}
+
+div{
+    height:100vp;
+}

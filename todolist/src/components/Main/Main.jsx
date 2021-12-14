@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Home from "../Home"
 import Itemlist from "../Itemlist"
-import Weather from "../Weather"
+import Weatherlist from "../Weatherlist"
 import {Route, Routes} from 'react-router-dom';
 // Para el uso de las rutas 
 
@@ -12,7 +12,7 @@ class Main extends Component {
       <Routes>
         <Route path="/" element={<Home/>} exact />
         <Route path="/itemlist" element={<Itemlist/>} />
-        <Route path="/weather" element={<Weather/>} />
+        <Route path="/weatherlist" element={<Weatherlist/>} />
       </Routes>  
     </div>
   }

@@ -1,0 +1,9 @@
+ul{
+    display: inline-flex;
+    align-items: baseline;
+}
+
+li{
+    font-size: 1em;
+    margin: none;
+}
