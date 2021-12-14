@@ -1,9 +1,10 @@
-import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
 import React, { Component } from "react";
 import Wheathercard from "./Weathercard";
 import './Weatherlist.css';
 const axios = require('axios');
-dotenv.config()
+// dotenv.config()
+// import { v4 as uuidv4 } from 'uuid';
 
 
 class Weatherlist extends Component {
@@ -24,7 +25,7 @@ class Weatherlist extends Component {
   // Mostramos la temperatura de Madrid al cargar el componente 
   async componentDidMount() {
     const city = "Madrid"
-    const weatherAxios = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=9b7d802f737db11a4d282644c3b31a6a`);
+    const weatherAxios = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=ES&appid=9b7d802f737db11a4d282644c3b31a6a`);
     const data = weatherAxios.data.list[0].main.temp;
     // console.log(data.list[0].main.temp)
     this.setState({
@@ -46,7 +47,7 @@ class Weatherlist extends Component {
     event.preventDefault();
     const searchedCity = this.city.current.value // hacemos uso del valor del campo por referencia
     this.setState({ searchedCity }) //actualizamos el valor de searchedCity 
-    const weatherAxios = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${searchedCity}&units=metric&appid=9b7d802f737db11a4d282644c3b31a6a`);
+    const weatherAxios = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${searchedCity}&units=metric&lang=ES&appid=9b7d802f737db11a4d282644c3b31a6a`);
     const data = weatherAxios.data.list[0].main.temp;
     const detailData = weatherAxios.data.list;
     console.log(detailData)
@@ -55,6 +56,7 @@ class Weatherlist extends Component {
       detailWeather: detailData
       // paintCityWeather(data)
     })
+    this.city.current.value = ""
   }
 
   render() {
@@ -65,20 +67,19 @@ class Weatherlist extends Component {
       {/* Pintamos clima de Madrid al entrar */}
       <h3>Temperatura de Madrid: </h3>{this.paintWeather()} ºC
 
-      <p>Busca el clima de otra ciudad</p>
+      <h3>Busca el clima de otra ciudad</h3>
       <form onSubmit={this.handleSubmit}>
-        <label htmlFor="city">Ciudad:</label><br />
+        <label htmlFor="city">Ciudad:</label>
+        <br/>
         <input type="text" id="city" name="city" ref={this.city} /><br />
+        <br/>
         <input type="submit"/>
       </form>
 
       <br />
-
-      <h2>City Wheather list</h2>
-        <p className="infoExtra">Temperatura de {this.state.city}</p> 
-        {/* Me falta pintar la ciudad  */}
+        <p>Temperatura de {this.state.searchedCity}</p> 
         {this.paintCityWeather()} ºC
-
+      {/* ?como se podria ocultar esto asta que tengamos datos */}
       <br/>
 
       <h2>Wheathercard</h2>

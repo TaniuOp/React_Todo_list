@@ -25,7 +25,7 @@ export class Itemlist extends Component {
     const newTask = {name,date,assignee}
     this.setState ({lastTaskAdded:newTask}) //setState Modifica el Estado
     this.setState ({allTasksList:[...this.state.allTasksList,newTask]}) //Aqui agrego a la lista de productos todo lo que habia [...,+ los nuevos pruductos]
-    alert(`Se ha creado ${name}, para el  ${date} , asignada a ${assignee}`)
+    alert(`Se ha creado ${name}, para el  ${date}`)
 }
 
   deleteAllProducts = () => {
@@ -63,8 +63,6 @@ export class Itemlist extends Component {
   render() {
 
     const name =  this.state.lastTaskAdded.name
-    const date = this.state.lastTaskAdded.date
-    const assignee = this.state.lastTaskAdded.assignee
 
     return (
     <div>
