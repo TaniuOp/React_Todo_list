@@ -24,8 +24,8 @@ class Weatherlist extends Component {
 
   // Mostramos la temperatura de Madrid al cargar el componente 
   async componentDidMount() {
-    const city = "Madrid"
-    const weatherAxios = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&lang=ES&appid=9b7d802f737db11a4d282644c3b31a6a`);
+    // const city = "Madrid"
+    const weatherAxios = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=Madrid&units=metric&lang=ES&appid=9b7d802f737db11a4d282644c3b31a6a`);
     const data = weatherAxios.data.list[0].main.temp;
     // console.log(data.list[0].main.temp)
     this.setState({
